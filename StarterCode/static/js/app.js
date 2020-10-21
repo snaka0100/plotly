@@ -62,6 +62,7 @@ function init(){
         //plot the bubble graph 
         Plotly.newPlot("bubble", bubbleData);
 
+    })
 }
 
 //Update demographic 
@@ -94,6 +95,7 @@ function updateBubble(subject){
     Plotly.restyle("bubble","marker",[{color: default_sample.otu_ids,  
                                         size: default_sample.sample_values}]);
 }
+
 //came from the index.html file
 function optionChanged(value){
     d3.json("samples.json").then(function(data) {
