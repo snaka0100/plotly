@@ -66,7 +66,7 @@ function init(){
 }
 
 //Update demographic 
-function upDateDemo(subject){
+function updateDemo(subject){
     demo_info = d3.select("#sample-metadata");
     //clear the demo
     demo_info.html("");
@@ -92,19 +92,20 @@ function updateBubble(subject){
     Plotly.restyle("bubble","x",[subject.otu_ids]);
     Plotly.restyle("bubble","y",[subject.sample_values]);
     Plotly.restyle("bubble","text",[subject.otu_labels]);
-    Plotly.restyle("bubble","marker",[{color: default_sample.otu_ids,  
-                                        size: default_sample.sample_values}]);
+    Plotly.restyle("bubble","marker",[{color: subject.otu_ids,  
+                                        size: subject.sample_values}]);
 }
 
 //came from the index.html file
 function optionChanged(value){
+    console.log(value)
     d3.json("samples.json").then(function(data) {
         //retrieving the necessary data and taking the first entry because thats the only entry in the index
         var metaData = data.metadata.filter(sampleData => sampleData.id == value)[0];
         var sample = data.samples.filter(sampleData => sampleData.id == value)[0];
 
         //update the charts
-        updateeDemo(metaData);
+        updateDemo(metaData);
         updateBar(sample);
         updateBubble(sample);
     })
