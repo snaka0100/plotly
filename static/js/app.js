@@ -2,6 +2,7 @@
 //need to create function for the updating the visuals 
 
 //default setup for the startup of the page
+console.log("samples.json")
 function init(){
     //read in the JSON files first
     d3.json("samples.json").then(function(data) {
