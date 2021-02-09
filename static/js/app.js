@@ -1,5 +1,4 @@
-//since we need to change the demo, barand bubble for each change in the sample ID we will
-//need to create function for the updating the visuals 
+
 
 //default setup for the startup of the page
 console.log("samples.json")
