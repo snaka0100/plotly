@@ -1,3 +1,4 @@
-# plotly
+# Plotly
 
-https://snaka0100.github.io/plotly/
+Used D3 Libraries to create an interactive dashboard with JSON data files 
+
